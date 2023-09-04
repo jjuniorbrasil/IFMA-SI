@@ -47,16 +47,17 @@ int main()
 
     imprimir_lista(minha_lista);
 
-    al.matricula = busca_lista_mat(minha_lista,"Novo Joao");
     strcpy(al.nome,"Novo Joao");
+    al.matricula = busca_lista_mat(minha_lista,al.nome);
     al.n1 = 6.1;
     al.n2 = 7.9;
     al.n3 = 9.0;
     inserir_lista_ordenada(minha_lista,al);
 
-    strcpy(al.nome,"Novo Joao");
-    al.matricula = busca_lista_mat(minha_lista, al.nome);
     inserir_lista_nome(minha_lista, al.nome);
+
+    system("cls");
+    imprimir_lista(minha_lista);
 
     al.matricula = busca_lista_mat(minha_lista,"Novo Joao");
     verificar_aprovacao(minha_lista, al.matricula);

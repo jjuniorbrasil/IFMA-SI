@@ -70,8 +70,8 @@ int inserir_lista_ordenada(Lista* li, struct aluno al){
 
     int i = 0,k = 0;
 
-        while(i < li->qtd && li->dados[i].matricula < al.matricula) {
-            for(k=li->qtd-1; k>=i; k--)
+        while((i < li->qtd) && (li->dados[i].matricula < al.matricula)) {
+            for(k=li->qtd-1; k>=0; k--)
                 {
                     li->dados[k+1] = li->dados[k];
                     li->dados[i] = al;
@@ -80,6 +80,7 @@ int inserir_lista_ordenada(Lista* li, struct aluno al){
                 i++;
             }
     return 1;
+
         }
 }
 
@@ -95,15 +96,16 @@ int busca_lista_mat(Lista* li, char m[]) {
 
 int inserir_lista_nome(Lista* li, char m[]) {
         int n = 0;
-        for (int x = 0; x<li->qtd; x++)
+        printf("\n");
+        for (int x = li->qtd; x >= 0; x--)
         {
-            if (strcmp(m, li->dados[x].nome)) {
+            if (strcmp(m, li->dados[x].nome) == 0) {
                 printf("Nova nota 1 de '%s': ", m);
-                scanf("%d", &li->dados[x].n1);
+                scanf("%f", &li->dados[x].n1);
                 printf("Nova nota 2 de '%s': ", m);
-                scanf("%d", &li->dados[x].n1);
+                scanf("%f", &li->dados[x].n1);
                 printf("Nova nota 3 de '%s': ", m);
-                scanf("%d", &li->dados[x].n1);
+                scanf("%f", &li->dados[x].n1);
                 return 1;
             }
         }
@@ -130,11 +132,11 @@ void verificar_aprovacao(Lista *li, int m) {
             me = (li->dados[i].n1 + li->dados[i].n2 + li->dados[i].n3)/3;
 
             if (me >= 7) {
-                printf("%s está aprovado!", li->dados[i].nome);
+                printf("\n%s está aprovado!\n", li->dados[i].nome);
             } else if (me >= 5) {
-                printf("%s terá que realizar a prova final.", li->dados[i].nome);
+                printf("\n%s terá que realizar a prova final.\n", li->dados[i].nome);
             } else {
-                printf("%s está reprovado.", li->dados[i].nome);
+                printf("\n%s está reprovado.\n", li->dados[i].nome);
             }
 
         }
