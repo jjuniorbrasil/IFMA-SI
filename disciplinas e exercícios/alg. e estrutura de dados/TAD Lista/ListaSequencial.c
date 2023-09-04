@@ -103,9 +103,9 @@ int inserir_lista_nome(Lista* li, char m[]) {
                 printf("Nova nota 1 de '%s': ", m);
                 scanf("%f", &li->dados[x].n1);
                 printf("Nova nota 2 de '%s': ", m);
-                scanf("%f", &li->dados[x].n1);
+                scanf("%f", &li->dados[x].n2);
                 printf("Nova nota 3 de '%s': ", m);
-                scanf("%f", &li->dados[x].n1);
+                scanf("%f", &li->dados[x].n3);
                 return 1;
             }
         }
