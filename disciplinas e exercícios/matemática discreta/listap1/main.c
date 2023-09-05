@@ -34,6 +34,7 @@ void exercicio6() {
     // Liberar memória.
     liberarConjunto(con);
     liberarMatrizR(m);
+    finalizacao();
 }
 
 void exercicio5() {
@@ -58,6 +59,7 @@ void exercicio5() {
     // Liberar memória.
     liberarConjunto(con);
     liberarMatrizR(m);
+    finalizacao();
 }
 
 void exercicio4() {
@@ -84,6 +86,7 @@ void exercicio4() {
     // Liberar memória.
     liberarConjunto(con);
     liberarMatrizR(m);
+    finalizacao();
 }
 
 void exercicio3() {
@@ -106,6 +109,7 @@ void exercicio3() {
     // Liberar memória.
     liberarConjunto(con);
     liberarMatrizR(m);
+    finalizacao();
 }
 
 void exercicio2() {
@@ -128,6 +132,7 @@ void exercicio2() {
     // Liberar memória.
     liberarConjunto(con);
     liberarMatrizR(m);
+    finalizacao();
 }
 
 void exercicio1() {
@@ -149,6 +154,7 @@ void exercicio1() {
     // Liberar memória.
     liberarConjunto(con);
     liberarMatrizR(m);
+    finalizacao();
 }
 
 void limpaTela() {
@@ -167,6 +173,12 @@ void menuPrincipal() {
            "\n [6] Encontre uma ordem total compatível, usando ordenação topológica."
            "\n\nSelecione o exercício: ");
 }
+
+void finalizacao() {
+    int x;
+    printf("\nPressione qualquer tecla para sair.");
+    x = getch();
+};
 
 int main()
 {
