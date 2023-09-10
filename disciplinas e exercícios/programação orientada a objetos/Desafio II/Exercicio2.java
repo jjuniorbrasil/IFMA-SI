@@ -12,9 +12,8 @@ import java.util.Scanner;
 
 class Binario {
     int linhaBinario(String l) {
-        int x = 0;
-        
-        
+       
+        int x = Integer.parseInt(l, 2);
         
         return x;
     }
@@ -27,9 +26,8 @@ public class Exercicio2 {
     Binario bin = new Binario();
     Scanner myScan = new Scanner(System.in);
     System.out.print("Informe uma sequência de 4 bits: ");
-    String l = myScan.nextLine();
     
-    System.out.print("A linha '" + l + "' convertida é: " + bin.linhaBinario(l));
+    System.out.println("A linha convertida para decimal é: " + bin.linhaBinario(myScan.nextLine()));
         
     }
 }
