@@ -14,7 +14,7 @@ class Binario {
     int linhaBinario(String l) {
         int x = 0;
         
-        System.out.printf("%d", l);
+        
         
         return x;
     }
