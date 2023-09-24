@@ -19,7 +19,7 @@ int main()
 
     int n = 0;
     minha_lista = criar_lista();
-    printf("Lista criada! - Lista Circular - 200000 inserções no final \n");
+    printf("Lista criada! - Lista Circular - 200000 inserções no final da lista \n");
 
     for (int x = 1; x <= 40000; x++) {
 
@@ -28,35 +28,35 @@ int main()
     al.n1 = 7.5;
     al.n2 = 8.2;
     al.n3 = 7.4;
-    inserir_lista_inicio(minha_lista,al);
+    inserir_lista_final(minha_lista,al);
 
     al.matricula = x+1;
     strcpy(al.nome,"Teste Maria");
     al.n1 = 7.5;
     al.n2 = 9.2;
     al.n3 = 9.4;
-    inserir_lista_inicio(minha_lista,al);
+    inserir_lista_final(minha_lista,al);
 
     al.matricula = x+2;
     strcpy(al.nome,"Novo Joao");
     al.n1 = 6.5;
     al.n2 = 8.2;
     al.n3 = 5.4;
-    inserir_lista_inicio(minha_lista,al);
+    inserir_lista_final(minha_lista,al);
 
     al.matricula = x+3;
     strcpy(al.nome,"Novo Maria");
     al.n1 = 6.5;
     al.n2 = 8.2;
     al.n3 = 5.4;
-    inserir_lista_inicio(minha_lista,al);
+    inserir_lista_final(minha_lista,al);
 
     al.matricula = x+4;
     strcpy(al.nome,"Novo Maria");
     al.n1 = 6.5;
     al.n2 = 8.2;
     al.n3 = 5.4;
-    inserir_lista_inicio(minha_lista,al);
+    inserir_lista_final(minha_lista,al);
 
     if (x == 25000) {
         printf("Executando...(1/3)\n");
