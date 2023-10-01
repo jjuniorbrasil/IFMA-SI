@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include "ListaDupla.h"
+#include <time.h>
+#include <locale.h>
 
 Lista* minha_lista;
 
@@ -9,47 +11,30 @@ struct aluno al;
 
 int main()
 {
+    int n;
     minha_lista = criar_lista();
-    printf("Lista criada! \n");
+    printf("LISTA DUPLAMENTE ENCADEADA: Lista criada! \n");
 
-    al.matricula = 1;
-    strcpy(al.nome,"Teste Joao");
+    setlocale(LC_ALL, "Portuguese");
+    clock_t t;
+    t = clock();
+
+    for (int x = 0; x < 500000; x++)
+    {
+    al.matricula = x;
+    strcpy(al.nome,"Teste");
     al.n1 = 7.5;
     al.n2 = 8.2;
     al.n3 = 7.4;
     inserir_lista_inicio(minha_lista,al);
-
-    al.matricula = 4;
-    strcpy(al.nome,"Teste Maria");
-    al.n1 = 7.5;
-    al.n2 = 9.2;
-    al.n3 = 9.4;
-    inserir_lista_final(minha_lista,al);
-
-    al.matricula = 2;
-    strcpy(al.nome,"Novo Joao");
-    al.n1 = 6.5;
-    al.n2 = 8.2;
-    al.n3 = 5.4;
-    inserir_lista_ordenada(minha_lista,al);
-
-    al.matricula = 3;
-    strcpy(al.nome,"Novo Maria");
-    al.n1 = 6.5;
-    al.n2 = 8.2;
-    al.n3 = 5.4;
-    inserir_lista_ordenada(minha_lista,al);
-
-    imprimir_lista(minha_lista);
-
-    printf("Removendo...\n");
-
-    remover_lista_inicio(minha_lista);
-    remover_lista(minha_lista,3);
-
-    imprimir_lista(minha_lista);
+    }
 
     liberar_lista(minha_lista);
 
     printf("A lista foi liberada!");
+
+    t = clock() - t;
+    double time_taken = ((double)t)/CLOCKS_PER_SEC; // in seconds
+    printf("\n\n'500000' inserções em %f segundos. \n", time_taken);
+    scanf("%d", &n);
 }

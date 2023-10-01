@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "ListaCircular.h"
-#include "time.h"
-#include "locale.h"
+#include "ListaDupla.h"
+#include <time.h>
+#include <locale.h>
 
 Lista* minha_lista;
 
@@ -13,20 +13,20 @@ int main()
 {
     int n;
     minha_lista = criar_lista();
-    printf("LISTA CIRCULAR: Lista criada! \n");
+    printf("Lista criada! \n");
 
     setlocale(LC_ALL, "Portuguese");
     clock_t t;
     t = clock();
 
-    for (int x = 0; x < 500000; x++)
+    for (int x = 0; x < 500; x++)
     {
     al.matricula = x;
     strcpy(al.nome,"Teste");
     al.n1 = 7.5;
     al.n2 = 8.2;
     al.n3 = 7.4;
-    inserir_lista_inicio(minha_lista,al);
+    inserir_lista_final(minha_lista,al);
     }
 
     liberar_lista(minha_lista);
