@@ -19,19 +19,61 @@ int main()
     al.n3 = 7.4;
     inserir_lista_inicio(minha_lista,al);
 
+    al.matricula = 1;
+    strcpy(al.nome,"Teste Joao");
+    al.n1 = 7.5;
+    al.n2 = 8.2;
+    al.n3 = 7.4;
+    inserir_lista_inicio(minha_lista,al);
+
+    al.matricula = 1;
+    strcpy(al.nome,"Teste Joao");
+    al.n1 = 7.5;
+    al.n2 = 8.2;
+    al.n3 = 7.4;
+    inserir_lista_inicio(minha_lista,al);
+
+    al.matricula = 1;
+    strcpy(al.nome,"Teste Joao");
+    al.n1 = 7.5;
+    al.n2 = 8.2;
+    al.n3 = 7.4;
+    inserir_lista_inicio(minha_lista,al);
+
+    al.matricula = 1;
+    strcpy(al.nome,"Teste Joao");
+    al.n1 = 7.5;
+    al.n2 = 8.2;
+    al.n3 = 7.4;
+    inserir_lista_inicio(minha_lista,al);
+
+    al.matricula = 4;
+    strcpy(al.nome,"Teste Maria");
+    al.n1 = 7.5;
+    al.n2 = 9.2;
+    al.n3 = 9.4;
+    inserir_lista_final(minha_lista,al);
+
+        al.matricula = 1;
+    strcpy(al.nome,"Teste Joao");
+    al.n1 = 7.5;
+    al.n2 = 8.2;
+    al.n3 = 7.4;
+    inserir_lista_inicio(minha_lista,al);
+
+        al.matricula = 1;
+    strcpy(al.nome,"Teste Joao");
+    al.n1 = 7.5;
+    al.n2 = 8.2;
+    al.n3 = 7.4;
+    inserir_lista_inicio(minha_lista,al);
+
     al.matricula = 2;
     strcpy(al.nome,"Novo Joao");
     al.n1 = 6.5;
     al.n2 = 8.2;
     al.n3 = 5.4;
     inserir_lista_ordenada(minha_lista,al);
-
-    al.matricula = 4;
-    strcpy(al.nome, "Maria2");
-    al.n1 = 7.5;
-    al.n2 = 9.2;
-    al.n3 = 9.4;
-    inserir_lista_final(minha_lista,al);
 
     al.matricula = 3;
     strcpy(al.nome,"Novo Maria");
@@ -42,9 +84,15 @@ int main()
 
     imprimir_lista(minha_lista);
 
-    printf("Exclusao! \n");
+    printf("Removendo...\n");
 
     remover_lista_inicio(minha_lista);
+    remover_lista(minha_lista,3);
+    remover_repetidos(minha_lista);
 
     imprimir_lista(minha_lista);
+
+    liberar_lista(minha_lista);
+
+    printf("Lista liberada!");
 }

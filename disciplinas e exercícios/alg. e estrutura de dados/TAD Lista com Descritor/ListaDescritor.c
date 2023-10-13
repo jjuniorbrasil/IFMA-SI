@@ -13,7 +13,6 @@ struct descritor{
     struct no *inicio;
     struct no *fim;
     int tamanho;
-
 };
 
 Lista* criar_lista(){
@@ -120,6 +119,102 @@ int remover_lista_inicio(Lista *li){
     return 1;
 }
 
+int remover_lista_final(Lista *li) {
+    if (li == NULL)
+        return 0;
+    if (li->inicio == NULL)
+        return 0;
+
+    No *atual = li->inicio;
+    No *ant = NULL;
+
+        while (atual->prox != NULL) {
+            ant = atual;
+            atual = atual->prox;
+        }
+
+    li->fim = ant;
+
+        if (ant == NULL) {
+            li->fim = li->inicio;
+        } else {
+            li->fim->prox = NULL;
+        }
+
+    free(atual);
+    li->tamanho--;
+    return 1;
+}
+
+int remover_lista(Lista* li, int mat) {
+    if (li == NULL)
+        return 0;
+    if (li->inicio == NULL)
+        return 0;
+
+    No *no = li->inicio;
+
+    while (no->dados.matricula != mat)
+    {
+        no = no->prox;
+        if (no == NULL)
+            return 0;
+    }
+
+    if (no == li->fim)
+        {
+            remover_lista_final(li);
+            return 1;
+        }
+    else if (no == li->inicio)
+        {
+            remover_lista_inicio(li);
+            return 1;
+        }
+    else
+        {
+            No *ant = li->inicio, *atual = no;
+            while (ant->prox != no)
+                ant = ant->prox;
+            ant->prox = no->prox;
+            free(no);
+        }
+
+    li->tamanho--;
+    return 1;
+}
+
+int remover_repetidos(Lista* li){
+   if (li == NULL)
+      return 0;
+  if (li->inicio == NULL || li->inicio->prox == NULL)
+      return 0;
+
+    No *no = li->inicio;
+    No *busca = no->prox;
+    No *ant, *atual;
+
+    while (no->prox != NULL) {
+
+        while (busca != NULL) {
+            if ((no->dados.matricula == busca->dados.matricula) && (no != busca))
+            {
+                no->prox = busca->prox;
+                free(busca);
+                li->tamanho--;
+            }
+            else
+            {
+                busca = busca->prox;
+            }
+        }
+
+        no = no->prox;
+    }
+
+  return 1;
+}
+
 void imprimir_lista(Lista* li){
     if (li->inicio == NULL)
        printf("Lista vazia\n");
@@ -131,5 +226,19 @@ void imprimir_lista(Lista* li){
         printf("Notas: %2.1f %2.1f %2.1f\n", ler_no->dados.n1, ler_no->dados.n2, ler_no->dados.n3);
         printf("-------------\n");
         ler_no = ler_no->prox;
+    }
+}
+
+void imprimir_nos(Lista* li) {
+    if (li == NULL)
+        return 0;
+    if (li->inicio == NULL)
+        return 0;
+
+    No *no = li->inicio;
+
+    while (no != NULL) {
+        printf("ENDEREÇO %x\n", no);
+        no = no->prox;
     }
 }
