@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1698793085 source:c:\users\júnior\desktop\cb projects\filadenc\filadupla.c
+	"FilaDupla.h"
+
+1698792393 c:\users\júnior\desktop\cb projects\filadenc\filadupla.h
+	"ListaDupla.h"
+
+1698795911 c:\users\júnior\desktop\cb projects\filadenc\listadupla.h
+	<stdlib.h>
+	<stdio.h>
+
+1698797257 source:c:\users\júnior\desktop\cb projects\filadenc\main.c
+	<stdio.h>
+	<stdlib.h>
+	<FilaDupla.h>
+
+1698797815 source:c:\users\júnior\desktop\cb projects\filadenc\listadupla.c
+	<stdio.h>
+	<stdlib.h>
+	"ListaDupla.h"
+

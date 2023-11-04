@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1698801227 source:c:\users\júnior\desktop\cb projects\pilhasimples\listasequencial.c
+	<stdio.h>
+	<stdlib.h>
+	"ListaSequencial.h"
+
+1698800857 c:\users\júnior\desktop\cb projects\pilhasimples\listasequencial.h
+
+1698834146 source:c:\users\júnior\desktop\cb projects\pilhasimples\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ListaSequencial.h"
+	"PilhaSimples.h"
+	"locale.h"
+
+1698801077 source:c:\users\júnior\desktop\cb projects\pilhasimples\pilhasimples.c
+	"ListaSequencial.h"
+	<stdlib.h>
+	<stdio.h>
+
+1698801149 c:\users\júnior\desktop\cb projects\pilhasimples\pilhasimples.h
+	"ListaSequencial.h"
+
