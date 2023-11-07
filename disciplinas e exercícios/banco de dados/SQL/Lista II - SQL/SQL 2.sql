@@ -111,6 +111,83 @@ INSERT INTO pais (nompai, nomcon, cappai, linpai, moepai, prepai, poppai, areapa
 VALUES ('Finlândia', 'Europa', 'Helsinque', 'Finlandês', 'Euro', 'EUR', 5515520, 338424.0, 'Europa Setentrional');
 
 select cappai from pais where nompai='Finlândia';
-    
+
+/*10*/
+
+select nompai from pais where nomcon = 'Ásia' and (year(datind) between '2001' and '2100');
+
+/*11*/
+
+select nompai from pais where linpai = 'Português';
+
+/*12*/
+
+select nompai from pais where linpai = 'Português' and nomcon = 'África';
+
+/*12*/
+
+select nomcid from cidade where nompai = 'Brasil';
+
+/*14*/
+
+select sum(popcon) as Populacao_Mundial from continente;
+
+/*15*/
+
+select count(codcid) from cidade where nomcid = 'São Luís';
+
+/*16*/
+
+select nompai from pais natural join cidade natural join hotel where prehot= (select min(prehot) from hotel);
+
+/*17*/
+
+select nomehot from hotel natural join cidade where tiphot = 'Super Luxo' and nomcid = 'São Luís';
+
+/*18*/ 
+
+SET SQL_SAFE_UPDATES = 0;
+update hotel set prehot=2000 where nomehot='Eiffel Palace';
+INSERT INTO hotel (codcid, nomehot, tiphot, prehot) values (4, 'Hotel Croissant', 'Super Luxo', 400.00);
+select avg(prehot) from hotel natural join cidade where nomcid='Paris'; 
+
+/*19*/  
+
+select avg(prehot) from hotel natural join cidade where nompai='França'; 
+
+/*20*/ 
+
+select nomcon , count(codhot) from hotel natural join cidade natural join continente where tiphot='Luxo' group by nomcon;
+
+/*21*/ 
+select nompai from hotel natural join cidade where nompai in(select nompai from hotel natural join cidade where tiphot='Super Luxo');
+/*22*/ 
+select regpai, count(nompai) from pais where regpai in ('Miliar', 'Republicanos', 'Monárquicos') group by regpai; 
+/*23*/
+select regpai, count(nompai) from pais where regpai in ('Miliar', 'Republicanos', 'Monárquicos') and nomcon = 'Europa' group by regpai; 
+/*24*/ 
+
+select linpai, count(nompai) from pais group by linpai having count(nompai)= (select max(total) from (select linpai, count(nompai) as total from pais group by linpai)as subquery); 
+SELECT linpai, COUNT(nompai) FROM pais GROUP BY linpai HAVING COUNT(nompai) = (SELECT MAX(total) FROM (SELECT linpai, COUNT(nompai) as total FROM pais GROUP BY linpai) AS subquery);
+
+/*25*/
 
 
+
+/*26*/
+
+select nomehot from hotel natural join cidade where nompai = 'Argentina' and prehot = (select max(prehot) from hotel);
+
+/*27*/
+
+select nompai, sum(poppai) from pais natural join cidade natural join hotel where prehot>30 and moepai='USD' group by nompai having count(codhot) > 50;
+
+/*28*/
+
+select nompai,poppai/areapai as densidade from pais having max(densidade);
+
+/*29*/
+
+select nompai,poppai/areapai as densidade from pais where nomcon='Europa' having max(densidade);
+
+/*30*/
