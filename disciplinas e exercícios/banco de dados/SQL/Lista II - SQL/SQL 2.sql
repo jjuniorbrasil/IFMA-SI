@@ -1,3 +1,5 @@
+# 01
+
 create database hoteis;
 
 use hoteis;
@@ -43,6 +45,8 @@ prehot double)
 auto_increment = 1,
 comment='Cadastro dos Hotéis';
 
+# 02
+
 INSERT INTO continente
 VALUES
     ('África', 123456789, 30370000.0),
@@ -71,6 +75,8 @@ VALUES
     (3, 'Nile Hilton', 'Luxo', 250.00),
     (4, 'Eiffel Palace', 'Super Luxo', 400.00);
     
+# 03
+    
 alter table hotel modify tiphot varchar(50),
 	change column nomhot nomehot varchar(50),
     add column endhot varchar(30),
@@ -79,6 +85,8 @@ alter table hotel modify tiphot varchar(50),
 alter table hotel add column prehot double;
 
 SET SQL_SAFE_UPDATES = 0;
+
+# 04
 
 update cidade set nomcid = 'São Luís' where nomcid = 'Rio de Janeiro';
 update continente set popcon=0 where nomcon = 'Ásia';
@@ -167,12 +175,11 @@ select regpai, count(nompai) from pais where regpai in ('Miliar', 'Republicanos'
 select regpai, count(nompai) from pais where regpai in ('Miliar', 'Republicanos', 'Monárquicos') and nomcon = 'Europa' group by regpai; 
 /*24*/ 
 
-select linpai, count(nompai) from pais group by linpai having count(nompai)= (select max(total) from (select linpai, count(nompai) as total from pais group by linpai)as subquery); 
 SELECT linpai, COUNT(nompai) FROM pais GROUP BY linpai HAVING COUNT(nompai) = (SELECT MAX(total) FROM (SELECT linpai, COUNT(nompai) as total FROM pais GROUP BY linpai) AS subquery);
 
 /*25*/
 
-
+select linpai from pais where poppai = (select max(poppai) from pais);
 
 /*26*/
 
@@ -191,3 +198,56 @@ select nompai,poppai/areapai as densidade from pais having max(densidade);
 select nompai,poppai/areapai as densidade from pais where nomcon='Europa' having max(densidade);
 
 /*30*/
+
+select nomhot from hotel, cidade, pais where hotel.codcid = cidade.codcid and cidade.nompai = pais.nompai and prehot BETWEEN 40 and 50 and pais.nompai = 'Inglaterra';
+
+/*31*/
+
+select prepai from pais natural join (select nompai, count(codhot) from pais natural join cidade natural join hotel group by nompai order by count(codhot) limit 1) as subquery;
+
+/*32*/
+
+select nompai from pais where datind = (select max(datind) from pais where nomcon = 'America Latina');
+
+/*33*/
+
+SELECT nomhot, MIN(prehot) AS MenorPreco
+FROM hotel
+NATURAL JOIN (
+    SELECT codhot
+    FROM hotel
+    NATURAL JOIN cidade
+    WHERE MONTH(datani) = 4
+) AS subquery
+GROUP BY nomhot;
+
+/*34*/
+
+select sum(poppai) from pais where linpai = 'Francês';
+
+/*35*/
+
+select max(prehot) from hotel natural join cidade natural join pais 
+natural join 
+(select nomcon 
+from continente 
+where arecon = 
+(select min(arecon) from continente)) as cont;
+
+/*36*/
+
+SELECT nompai, COUNT(codhot) AS total
+FROM pais
+NATURAL JOIN cidade
+NATURAL JOIN hotel
+GROUP BY nompai
+HAVING COUNT(codhot) = (
+    SELECT MAX(total_hotels)
+    FROM (
+        SELECT COUNT(codhot) AS total_hotels
+        FROM pais
+        NATURAL JOIN cidade
+        NATURAL JOIN hotel
+        GROUP BY nompai
+    ) AS subquery
+) limit 1;
