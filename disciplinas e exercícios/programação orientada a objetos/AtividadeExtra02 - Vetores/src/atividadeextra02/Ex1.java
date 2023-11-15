@@ -28,7 +28,7 @@ public class Ex1 extends Exercicio {
         Scanner myScan = new Scanner(System.in);
         int v[] = new int[6];
         
-        System.out.println("\n========= EXERCÍCIO 1 =========\n"
+        System.out.println("\n========= EXERCÍCIO 1 =========\n\n"
                 + "Informe 6 valores inteiros!\n");
         
         for (int i = 0; i < v.length; i++) {

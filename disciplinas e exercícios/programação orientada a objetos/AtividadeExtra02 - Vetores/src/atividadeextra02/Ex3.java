@@ -49,7 +49,7 @@ public class Ex3 extends Exercicio {
                 menorImpar = this.vetor[i];
         }
         
-        System.out.println("\n========= EXERCÍCIO 3 =========\n"
+        System.out.println("\n========= EXERCÍCIO 3 =========\n\n"
                 + "Vetor utilizado: ");
                 for (int c = 0; c < this.vetor.length - 1; c++)
                     System.out.print(this.vetor[c] + ", ");

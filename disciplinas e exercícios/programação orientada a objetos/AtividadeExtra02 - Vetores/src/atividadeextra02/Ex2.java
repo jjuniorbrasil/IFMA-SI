@@ -34,7 +34,7 @@ public class Ex2 extends Exercicio {
             }
         }
         
-        System.out.println("\n========= EXERCÍCIO 2 =========\n"
+        System.out.println("\n========= EXERCÍCIO 2 =========\n\n"
                 + "Elementos do vetor: ");
         for (int i = 0; i < (this.vetor.length - 1); i++) {
             System.out.print(this.vetor[i] + ", ");
