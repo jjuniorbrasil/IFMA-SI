@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1700936390 source:c:\users\júnior\desktop\cb projects\arvore binária dinâmica\arvorebinaria.c
+	<stdio.h>
+	<stdlib.h>
+	"ArvoreBinaria.h"
+	"ListaDinamica.h"
+
+1700934770 c:\users\júnior\desktop\cb projects\arvore binária dinâmica\arvorebinaria.h
+
+1700936743 source:c:\users\júnior\desktop\cb projects\arvore binária dinâmica\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ArvoreBinaria.h"
+	"ListaDinamica.h"
+
+1700936578 c:\users\júnior\desktop\cb projects\arvore binária dinâmica\listadinamica.h
+	<stdio.h>
+	<stdlib.h>
+
+1700936701 source:c:\users\júnior\desktop\cb projects\arvore binária dinâmica\listadinamica.c
+	<stdio.h>
+	<stdlib.h>
+	"ListaDinamica.h"
+
