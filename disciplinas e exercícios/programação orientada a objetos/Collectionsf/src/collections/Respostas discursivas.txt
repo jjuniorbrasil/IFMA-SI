@@ -1,0 +1,25 @@
+EXERCÍCIO 4
+
+	c) Foi possível add elementos repetidos?
+
+Não foi possível adicionar elementos repetidos. Se trata de um Set/Conjunto.
+     
+	d) A ordem mostrada como resultado, é a mesma da inserção?
+
+Não, a ordem apresentada é crescente.
+
+EXERCÍCIO 5
+
+	a) Após criar a estrutura FILA, usando o ArrayBlockingQueue, qual a diferença se usar os
+	dois comandos para remoção, em seguida, após criar a estrutura. Obs: comandos (poll,
+	remove).
+
+POLL - serve pra recuperar o valor armazenado no início da fila e, ao mesmo tempo, removê-lo. Retorna null se a fila estiver vazia.
+PEEK - traduz-se para 'bisbilhotar': verifica o primeiro elemento da fila, mas não o remove.
+
+	b) Comparando as coleções (ArrayBlockingQueue e PriorityBlockingQueue), qual
+	a diferença entre essas duas estruturas.
+
+O 'ArrayBlockingQueue' é uma fila que não prioriza os elementos. Ela apenas os armazena na ordem que foram inseridos.
+Em outro sentido, existe o 'PriorityBlockingQueue', que segue uma regra para prioridade específica em função do HEAP a fim de que a recuperação
+dos elementos se dê de forma mais rápida.

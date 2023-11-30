@@ -30,11 +30,5 @@ public class Ex4 {
 //        for (int z : mySet) {
 //            System.out.println(z);
 //        }
-        
-//        c) Foi possível add elementos repetidos?
-//        Não foi possível adicionar elementos repetidos.
-//        
-//        d) A ordem mostrada como resultado, é a mesma da inserção?
-//        Não, a ordem apresentada é crescente.
     }
 }
