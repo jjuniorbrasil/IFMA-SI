@@ -5,14 +5,14 @@
 package sistemabancario;
 
 class DepositoInvalido extends Exception {
-    public DepositoInvalido() {
-        super("Depósito inválido!");
+    public DepositoInvalido(String mensagem) {
+        super(mensagem);
     }
 }
 
 class TransferenciaInvalida extends Exception {
-    public TransferenciaInvalida() {
-        super("Transferência inválida!");
+    public TransferenciaInvalida(String mensagem) {
+        super(mensagem);
     }
 }
 
@@ -30,13 +30,26 @@ public class Conta {
         return this.saldo;
     }
     
-    public void Transferir(double v, Conta c2) throws TransferenciaInvalida {
-        if (v <= 0 || this.saldo < v)
-            throw new TransferenciaInvalida();
-        
-        this.saldo -= v;
-        c2.saldo += v;
-        
-        System.out.println("Transferência realizada com sucesso!");
+    public void transferir(double v, Conta c2){
+        try {
+            if (v <= 0 || v > this.saldo)
+                throw new TransferenciaInvalida("Houve um erro ao transferir.");
+            this.saldo -= v;
+            c2.saldo += v;
+            System.out.println("Valor transferido.");
+        } catch (TransferenciaInvalida e) {
+            System.out.println("ERRO: " + e.getMessage());
+        }
+    }
+    
+    public void depositar(double valor) {
+	try {
+            if (valor <= 0)
+		throw new DepositoInvalido("Houve um erro ao depositar.");
+            this.saldo += valor;
+            System.out.println("Valor depositado.");
+	} catch (DepositoInvalido e) {
+            System.out.println("ERRO: " + e.getMessage());
+	}
     }
 }
