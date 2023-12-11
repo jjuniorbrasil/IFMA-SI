@@ -1,0 +1,6 @@
+
+11-12-2023-181724
+ ID: 1 | Tipo: Ônibus | Cliente: 213.232.131-23 | Rota: São Luís-Maceió | Quantidade: 3 | VALOR(R$): 123.0
+EMBARCA ÀS: 12:23 AM | CHEGA ÀS: 11:21 PM
+
+-----------------------------------

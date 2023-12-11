@@ -1,0 +1,6 @@
+
+11-12-2023-184013
+ ID: 1 | Tipo: Ônibus | Cliente: 212.312.312-31 | Rota: São Luís-Macapá | Quantidade: 2 | VALOR(R$): 123.0
+EMBARCA ÀS: 10:23 AM | CHEGA ÀS: 11:23 PM
+
+-----------------------------------

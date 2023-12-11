@@ -26,7 +26,8 @@ import javax.imageio.ImageIO;
 import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
-
+import java.text.DecimalFormat;
+import java.text.ParseException;
 /**
  *
  * @author Júnior
@@ -917,7 +918,15 @@ public class MainFrame extends javax.swing.JFrame {
             if(qtdComboBox.getSelectedIndex()==0)
             	throw new QuantidadeInvalida();        
         p.setQuantidade(qtdComboBox.getSelectedIndex());
-        p.setValor(Double.parseDouble(valorField.getText()));
+        
+        String valorComVirgula = valorField.getText();
+        DecimalFormat formato = new DecimalFormat("#,##0.00");
+        try {
+        double valor = formato.parse(valorComVirgula).doubleValue();
+        p.setValor(valor);
+        } catch (ParseException e) {
+        e.printStackTrace();
+        }
         if(p.getValor()<=0)
             	throw new ValorInvalido(p.getValor());
         
